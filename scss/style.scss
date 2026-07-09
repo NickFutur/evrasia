@@ -1,0 +1,135 @@
+﻿@font-face {
+  font-family: "Proxima Nova";
+  src: url("./fonts/ProximaNovaRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("./fonts/ProximaNovaBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("./fonts/ProximaNovaBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root{
+
+}
+
+.sushi-products{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+
+  .product-card {
+      width: 260px;
+      background: #fff;
+      font-family: "Proxima Nova";
+
+      &__image-link {
+        display: block;
+      }
+      &__image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      }
+      &__content {
+      padding-top: 16px;
+  }
+
+  &__text{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__title {
+      color: #000;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 100%;
+  }
+
+  &__desc {
+      color: rgba($color: #000000, $alpha: 0.4);
+      font-size: 14px;
+      line-height: 100%;
+  }
+
+  &__weight {
+      color: rgba($color: #000000, $alpha: 0.4);
+      font-size: 14px;
+      line-height: 100%;
+  }
+
+  &__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+  }
+
+  &__price {
+      color: #55a8b6;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 100%;
+  }
+
+  &__old-price {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #FC5C49;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 100%;
+  }
+
+  &__hint {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #FC5C49;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+  }
+
+  &__add {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: #55a8b6;
+      color: #fff;
+      font-size: 45px;
+      font-weight: 300;
+      line-height: 1;
+      cursor: pointer;
+  }
+  }
+}
