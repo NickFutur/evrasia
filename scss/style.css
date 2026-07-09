@@ -1,21 +1,21 @@
 @font-face {
   font-family: "Proxima Nova";
-  src: url("../fonts/ProximaNovaRegular.woff") format("woff");
+  src: url("../fonts/ProximaNova-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Proxima Nova";
-  src: url("../fonts/ProximaNovaBold.woff") format("woff");
+  src: url("../fonts/ProximaNova-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Proxima Nova";
-  src: url("../fonts/ProximaNovaBlack.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/ProximaNova-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -32,7 +32,7 @@
 .sushi-products .product-card {
   width: 260px;
   background: #fff;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova", Arial, sans-serif;
 }
 .sushi-products .product-card__image-link {
   display: block;
@@ -46,11 +46,15 @@
 }
 .sushi-products .product-card__content {
   padding-top: 16px;
+  position: relative;
 }
 .sushi-products .product-card__text {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+.sushi-products .product-card__text a {
+  text-decoration: none;
 }
 .sushi-products .product-card__title {
   color: #000;
@@ -93,13 +97,37 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: #FC5C49;
   color: #fff;
   font-size: 17px;
   font-weight: 700;
+  cursor: pointer;
+}
+.sushi-products .product-card__hint-hidden-text {
+  position: absolute;
+  top: 10%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(4px);
+  width: 200px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #000;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+}
+.sushi-products .product-card__hint-hidden-text--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 .sushi-products .product-card__add {
   display: flex;
