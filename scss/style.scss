@@ -191,6 +191,7 @@
       }
       &__desc {
         font-size: 13px;
+        max-width: 220px;
       }
       &__weight {
         font-size: 13px;
@@ -201,6 +202,7 @@
         max-width: 25%;
         shrink: 0;
         margin-top: 0;
+        align-items: end;
       }
       &__hint-hidden-text {
         top: 0%;
