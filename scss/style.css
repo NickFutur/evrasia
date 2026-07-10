@@ -19,6 +19,10 @@
   font-style: normal;
   font-display: swap;
 }
+body {
+  font-family: "Proxima Nova", Arial, sans-serif;
+}
+
 .sushi-products {
   display: flex;
   flex-wrap: wrap;
