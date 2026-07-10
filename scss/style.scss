@@ -22,11 +22,10 @@
   font-display: swap;
 }
 
-:root{
-
+:root {
 }
 
-.sushi-products{
+.sushi-products {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
@@ -35,94 +34,97 @@
   max-width: 1200px;
   padding: 0px 10px;
   box-sizing: border-box;
+  justify-content: center;
 
   .product-card {
-      width: 260px;
-      background: #fff;
-      font-family: "Proxima Nova", Arial, sans-serif;
+    width: 100%;
+    max-width: 260px;
+    background: #fff;
+    font-family: "Proxima Nova", Arial, sans-serif;
 
-      &__image-link {
-        display: block;
-      }
-      &__image {
+    &__image-link {
+      display: block;
+    }
+    &__image {
       display: block;
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      }
-      &__content {
+    }
+    &__content {
       padding-top: 16px;
       position: relative;
-  }
-
-  &__text{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
-    a{
-      text-decoration: none;
     }
-  }
 
-  &__title {
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &__title {
       color: #000;
       font-size: 18px;
       font-weight: 700;
       line-height: 100%;
-  }
+    }
 
-  &__desc {
+    &__desc {
       color: rgba($color: #000000, $alpha: 0.4);
       font-size: 14px;
       line-height: 100%;
-  }
+    }
 
-  &__weight {
+    &__weight {
       color: rgba($color: #000000, $alpha: 0.4);
       font-size: 14px;
       line-height: 100%;
-  }
+    }
 
-  &__bottom {
+    &__bottom {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-top: 10px;
-  }
+    }
 
-  &__price {
+    &__price {
       color: #55a8b6;
       font-size: 19px;
       font-weight: 700;
       line-height: 100%;
-  }
+    }
 
-  &__old-price {
+    &__old-price {
       display: flex;
       align-items: center;
       gap: 5px;
-      color: #FC5C49;
+      color: #fc5c49;
       font-size: 19px;
       font-weight: 700;
       line-height: 100%;
-  }
+    }
 
-  &__hint {
+    &__hint {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background: #FC5C49;
+      background: #fc5c49;
       color: #fff;
       font-size: 17px;
       font-weight: 700;
       cursor: pointer;
-  }
+      aspect-ratio: 1 / 1;
+    }
 
-  &__hint-hidden-text{
+    &__hint-hidden-text {
       position: absolute;
       top: 10%;
       opacity: 0;
@@ -137,7 +139,10 @@
       font-size: 14px;
       color: #000;
       z-index: 1000;
-      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0s linear 0.3s;
 
       &--visible {
         opacity: 1;
@@ -145,9 +150,9 @@
         transform: translateY(0);
         transition-delay: 0s;
       }
-  }
+    }
 
-  &__add {
+    &__add {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -161,6 +166,55 @@
       font-weight: 300;
       line-height: 1;
       cursor: pointer;
+    }
   }
+}
+
+@media (max-width: 480px) {
+  .sushi-products {
+    .product-card {
+      max-width: 100%;
+      &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding-top: 10px;
+      }
+      &__text {
+        max-width: 250px;
+        flex: 1;
+        gap: 6px;
+        justify-content: space-between;
+      }
+      &__title {
+        font-size: 15px;
+      }
+      &__desc {
+        font-size: 13px;
+      }
+      &__weight {
+        font-size: 13px;
+      }
+      &__bottom {
+        flex-direction: column;
+        gap: 10px;
+        max-width: 25%;
+        shrink: 0;
+        margin-top: 0;
+      }
+      &__hint-hidden-text {
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &__price {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+      }
+      &__old-price {
+        font-size: 22px;
+      }
+    }
   }
 }
